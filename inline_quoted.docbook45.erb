@@ -1,0 +1,15 @@
+<%
+  NO_TAGS = ['', '']
+
+  QUOTED_TAGS = {
+    :emphasis => ['<emphasis>', '</emphasis>'],
+    :strong => ['<emphasis role="strong">', '</emphasis>'],
+    :monospaced => ['<code>', '</code>'],
+    :superscript => ['<superscript>', '</superscript>'],
+    :subscript => ['<subscript>', '</subscript>'],
+    :double => ['&#8220;', '&#8221;'],
+    :single => ['&#8216;', '&#8217;']
+  }
+
+  start_tag, end_tag = QUOTED_TAGS[type] || NO_TAGS
+%><%= start_tag %><%= text %><%=end_tag%>
